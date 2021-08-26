@@ -9,12 +9,15 @@
   </div>
 </template>
 <script lang="ts">
-import { getUserdetail } from "@/api/common";
 import { defineComponent } from "vue";
+
+import { getUserdetail } from "@/api/common";
+import { personalized } from "@/api/discover";
 
 export default defineComponent({
   setup() {
     getUserdetail("1340100329");
+    personalized(30);
   },
 });
 </script>

@@ -7,6 +7,7 @@ export const byPhoneLogin = (phone: string, password: string) => {
     password,
   });
 };
+
 // 获取用户信息
 export const getUserdetail = (uid: string) => {
   return getRequest(`/user/detail`, {
