@@ -1,8 +1,14 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
 //ui
-import { Button } from 'ant-design-vue';
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
 
-createApp(App).use(router).use(Button).mount('#app')
+const app = createApp(App)
+  .use(router)
+  .use(Antd)
+  .mount("#app");
+
+// app.config.productionTip = false;

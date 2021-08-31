@@ -1,18 +1,47 @@
 <template>
   <div class="topbar">
     <ul>
-      <li class="active">
-        <router-link to="/discover">发现音乐</router-link>
+      <li
+        :class="{ active: routePath == item.path }"
+        v-for="item in routeList"
+        :key="item.name"
+      >
+        <router-link :to="item.path">{{ item.name }}</router-link>
       </li>
-      <li><router-link to="/my">我的音乐</router-link></li>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-// import { toRefs } from "vue";
+import { watch, reactive, toRefs } from "vue";
+import { useRoute } from "vue-router";
 export default {
-  // setup() {},
+  setup() {
+    const routeList = [
+      {
+        path: "/discover",
+        name: "发现音乐",
+      },
+      {
+        path: "/my",
+        name: "我的音乐",
+      },
+    ];
+    const state = reactive({
+      routePath: "",
+      routeList,
+    });
+    const route = useRoute();
+    watch(
+      () => route.path,
+      () => {
+        state.routePath = route.path;
+      }
+    );
+    return {
+      ...toRefs(state),
+    };
+  },
 };
 </script>
 
