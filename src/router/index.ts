@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import { useStore } from "vuex";
 
 // 公共页面 ，
 const comRoutes: Array<RouteRecordRaw> = [
@@ -19,7 +20,6 @@ const comRoutes: Array<RouteRecordRaw> = [
     redirect: "/404",
   },
 ];
-
 // 页面
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,7 +37,6 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
 ];
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [...comRoutes, ...routes],
@@ -45,7 +44,6 @@ const router = createRouter({
 
 // 导航守卫
 const role = "admin";
-
 router.beforeEach((to: any, from: any, next: any) => {
   const permissions: any = to.meta && to.meta.permissions;
   if (!permissions || permissions.includes(role)) {

@@ -13,7 +13,7 @@
 </template>
 <script lang="ts">
 import { toRefs, ref, reactive, computed, provide } from "vue";
-import { useRoute, useRouter } from "vue-router";
+import { useStore } from "vuex";
 
 export default {
   setup() {
@@ -43,16 +43,8 @@ export default {
     });
     const count = ref(111);
     provide("info", "你妹的");
-
-    const route = useRoute();
-    const router = useRouter();
-
-    // console.log(route.query.name);
-    // setTimeout(() => {
-    //   router.push({
-    //     path: "/my",
-    //   });
-    // }, 1000);
+    const store = useStore();
+    console.log(store.state.userInfo);
 
     return {
       ...toRefs(state),

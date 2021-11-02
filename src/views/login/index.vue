@@ -39,6 +39,8 @@ import {
 
 import { defineComponent, reactive } from "vue";
 import { useRouter } from "vue-router";
+import { useStore } from "vuex";
+
 interface FormState {
   pass: string;
   checkPass: string;
@@ -78,8 +80,16 @@ export default defineComponent({
     };
     const router = useRouter();
 
+    const store = useStore();
+
     const handleFinish = (values: FormState) => {
       router.replace("/discover");
+      const userInfo = {
+        name: "张三",
+        age: 18,
+        role: "admin",
+      };
+      store.commit("setUserInfo", userInfo);
     };
     const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
       console.log(errors);
@@ -99,6 +109,7 @@ export default defineComponent({
   },
 });
 </script>
+
 <style lang="scss" scoped>
 .login {
   height: 100%;
