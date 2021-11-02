@@ -52,7 +52,6 @@ export default defineComponent({
       userName: "",
       pass: "",
     });
-
     const validatePass = async (rule: RuleObject, value: string) => {
       if (value === "") {
         return Promise.reject("请输入密码");
@@ -79,15 +78,13 @@ export default defineComponent({
       wrapperCol: { span: 14 },
     };
     const router = useRouter();
-
     const store = useStore();
-
     const handleFinish = (values: FormState) => {
-      router.replace("/discover");
+      router.replace({ path: "/home" });
       const userInfo = {
         name: "张三",
         age: 18,
-        role: "admin",
+        role: "editor",
       };
       store.commit("setUserInfo", userInfo);
     };

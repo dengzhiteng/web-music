@@ -1,11 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import { useStore } from "vuex";
 
 // 公共页面 ，
 const comRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/login",
+    redirect: "/home",
   },
   {
     path: "/login",
@@ -23,10 +22,10 @@ const comRoutes: Array<RouteRecordRaw> = [
 // 页面
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/discover",
-    component: () => import("@/views/discover/index.vue"),
+    path: "/home",
+    component: () => import("@/views/home/index.vue"),
     meta: {
-      permissions: ["admin"],
+      permissions: ["admin", "editor"],
     },
   },
   {
@@ -40,17 +39,6 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [...comRoutes, ...routes],
-});
-
-// 导航守卫
-const role = "admin";
-router.beforeEach((to: any, from: any, next: any) => {
-  const permissions: any = to.meta && to.meta.permissions;
-  if (!permissions || permissions.includes(role)) {
-    next();
-  } else {
-    router.push("/404");
-  }
 });
 
 export default router;

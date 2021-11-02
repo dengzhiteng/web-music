@@ -19,7 +19,7 @@ export default {
   setup() {
     const routeList = [
       {
-        path: "/discover",
+        path: "/home",
         name: "发现音乐",
       },
       {

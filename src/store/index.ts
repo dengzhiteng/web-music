@@ -4,12 +4,22 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
-      userInfo: {},
+      userInfo: {
+        name: "张三",
+        age: 18,
+        role: "editor",
+      },
     };
   },
   mutations: {
     setUserInfo(state: any, info: unknown) {
       state.userInfo = info;
+    },
+  },
+  getters: {
+    // 获取到最终的数据结果
+    getUserInfo(state) {
+      return state.count;
     },
   },
 });

@@ -10,4 +10,10 @@ module.exports = {
     },
     devtool: "source-map",
   },
+  chainWebpack: (config) => {
+    config.plugin("html").tap((args) => {
+      args[0].title = "桃源.音乐";
+      return args;
+    });
+  },
 };

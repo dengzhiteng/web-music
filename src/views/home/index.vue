@@ -13,8 +13,6 @@
 </template>
 <script lang="ts">
 import { toRefs, ref, reactive, computed, provide } from "vue";
-import { useStore } from "vuex";
-
 export default {
   setup() {
     const state = reactive({
@@ -43,9 +41,6 @@ export default {
     });
     const count = ref(111);
     provide("info", "你妹的");
-    const store = useStore();
-    console.log(store.state.userInfo);
-
     return {
       ...toRefs(state),
       bookNumDouble,
