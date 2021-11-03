@@ -8,11 +8,11 @@ const comRoutes: Array<RouteRecordRaw> = [
   },
   {
     path: "/login",
-    component: () => import("@/views/login/index.vue"),
+    component: () => import("@/views/login/Index.vue"),
   },
   {
     path: "/404",
-    component: () => import("@/views/common/notFound.vue"),
+    component: () => import("@/views/common/NotFound.vue"),
   },
   {
     path: "/:pathMatch(.*)",
@@ -23,14 +23,14 @@ const comRoutes: Array<RouteRecordRaw> = [
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
-    component: () => import("@/views/home/index.vue"),
+    component: () => import("@/views/Home.vue"),
     meta: {
       permissions: ["admin", "editor"],
     },
   },
   {
     path: "/my",
-    component: () => import("@/views/my/index.vue"),
+    component: () => import("@/views/my/Index.vue"),
     meta: {
       permissions: ["admin", "editor"],
     },

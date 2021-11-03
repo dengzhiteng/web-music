@@ -2,7 +2,7 @@
   <router-view />
 </template>
 
-<style lang="scss">
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -22,6 +22,10 @@ ol,
 ul,
 dl {
   list-style: none;
+}
+em,
+i {
+  font-style: normal;
 }
 
 a,
