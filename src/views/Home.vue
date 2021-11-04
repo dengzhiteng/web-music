@@ -1,15 +1,21 @@
 <template>
   <div class="home">
     <Header></Header>
+    <Footer></Footer>
+    <SlidBar></SlidBar>
   </div>
 </template>
 <script lang="ts">
 import { toRefs, ref, reactive, computed, provide } from "vue";
 import Header from "./layout/Header.vue";
+import Footer from "./layout/Footer.vue";
+import SlidBar from "./layout//SlidBar.vue";
 export default {
   name: "Home",
   components: {
     Header,
+    Footer,
+    SlidBar,
   },
   setup() {
     const state = reactive({

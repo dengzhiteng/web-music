@@ -7,7 +7,7 @@
         </a>
       </h1>
       <ul class="m-nav">
-        <li>
+        <li class="active">
           <a href="">
             <em>发现音乐</em>
             <sub></sub>
@@ -48,10 +48,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="scss" scoped>
 .header {
   height: 70px;
@@ -78,13 +74,13 @@ ul.m-nav {
   padding: 0;
   li {
     float: left;
+    position: relative;
+    text-align: center;
     a {
       padding: 0 19px;
       text-align: center;
       color: #ccc;
       font-size: 14px;
-      position: relative;
-      text-align: center;
       em {
         line-height: 70px;
         height: 70px;
@@ -92,15 +88,22 @@ ul.m-nav {
       }
       sub {
         background: url("../../assets/images/topbar.png") no-repeat;
-        display: block;
-        // position: absolute;
-        // left: 50%;
-        // top: 64px;
+        display: none;
         width: 12px;
         height: 7px;
-        // margin-left: -6px;
         overflow: hidden;
         background-position: -226px 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &.active {
+      a {
+        color: #fff;
+        sub {
+          display: block;
+        }
       }
     }
   }
