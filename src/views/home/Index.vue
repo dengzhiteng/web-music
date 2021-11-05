@@ -1,15 +1,16 @@
 <template>
   <div class="home">
     <Header></Header>
-    <Footer></Footer>
     <SlidBar></SlidBar>
+    <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 <script lang="ts">
 import { toRefs, ref, reactive, computed, provide } from "vue";
-import Header from "./layout/Header.vue";
-import Footer from "./layout/Footer.vue";
-import SlidBar from "./layout//SlidBar.vue";
+import Header from "../layout/Header.vue";
+import Footer from "../layout/Footer.vue";
+import SlidBar from "../layout/SlidBar.vue";
 export default {
   name: "Home",
   components: {

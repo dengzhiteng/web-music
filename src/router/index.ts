@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 const comRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/home/discover",
   },
   {
     path: "/login",
@@ -23,10 +23,42 @@ const comRoutes: Array<RouteRecordRaw> = [
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
-    component: () => import("@/views/Home.vue"),
+    component: () => import("@/views/home/Index.vue"),
     meta: {
       permissions: ["admin", "editor"],
     },
+    children: [
+      {
+        path: "discover",
+        name: "discover",
+        component: () => import("@/views/home/Discover.vue"),
+      },
+      {
+        path: "album",
+        name: "album",
+        component: () => import("@/views/home/Album.vue"),
+      },
+      {
+        path: "djradio",
+        name: "djradio",
+        component: () => import("@/views/home/Djradio.vue"),
+      },
+      {
+        path: "playlist",
+        name: "playlist",
+        component: () => import("@/views/home/Playlist.vue"),
+      },
+      {
+        path: "singer",
+        name: "singer",
+        component: () => import("@/views/home/Singer.vue"),
+      },
+      {
+        path: "toplist",
+        name: "toplist",
+        component: () => import("@/views/home/Toplist.vue"),
+      },
+    ],
   },
   {
     path: "/my",

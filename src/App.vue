@@ -2,7 +2,7 @@
   <router-view />
 </template>
 
-<style>
+<style scope>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,10 +13,6 @@ body,
 #app {
   height: 100%;
 }
-* {
-  margin: 0;
-  padding: 0;
-}
 ol,
 ul,
 dl {
@@ -26,7 +22,6 @@ em,
 i {
   font-style: normal;
 }
-
 a,
 a:focus,
 a:hover {
@@ -38,5 +33,21 @@ a:hover {
 
 div:focus {
   outline: none;
+}
+
+ol,
+ul,
+dl,
+div,
+a,
+em,
+i,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0 !important;
 }
 </style>

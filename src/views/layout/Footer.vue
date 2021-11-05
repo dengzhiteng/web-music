@@ -66,7 +66,6 @@ export default {};
         width: 100%;
         display: block;
         text-align: left !important;
-        margin: 0;
         color: #666;
         line-height: 2;
         a {

@@ -1,6 +1,7 @@
 // 注意。只能是js 文件
 const path = require("path");
 module.exports = {
+  publicPath: "./",
   configureWebpack: {
     resolve: {
       alias: {
